@@ -2,17 +2,35 @@
   <section class="container">
     <moly-header></moly-header>
     <div class="page-container clear">
-      <div class="page-left">
+      <!-- <div class="page-left">
         <user-info></user-info>
         <moly-nav></moly-nav>
-      </div>
+      </div> -->
       <div class="page-right">
-        <aside-article-list></aside-article-list>
+        <!-- <aside-article-list></aside-article-list>
+        <moly-nav></moly-nav>
         <comment></comment>
-        <files></files>
+        <files></files> -->
+        <!-- <i class="fa fa-home"></i> -->
       </div>
       <div class="page-middle">
         <nuxt-child></nuxt-child>
+      </div>
+      <div class="nav-btn">
+        <nuxt-link :to="'/'">
+          <div class="nav-btn-list">
+            <i class="fa fa-home"></i>
+          </div>
+        </nuxt-link>
+        <div class="nav-btn-list">
+          <i class="fa fa-tags"></i>
+        </div>
+        <div class="nav-btn-list">
+          <i class="fa fa-archive"></i>
+        </div>
+        <div class="nav-btn-list">
+          <i class="fa fa-user"></i>
+        </div>
       </div>
     </div>
   </section>

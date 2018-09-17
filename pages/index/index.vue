@@ -1,22 +1,30 @@
 <template>
   <section>
     <article-item v-for="item in articleList"
-    :key="item.id"
-    :id="item.id"
+    :key="item._id"
+    :id="item._id"
     :title="item.title"
     :name="item.name"
     :date="item.date"
+    :column-name="item.columnName"
+    :tags="item.tags"
     :img="item.img"
-    :abs="item.abs"
+    :abs="item.abstract"
     ></article-item>
   </section>
 </template>
 
 <script>
+import axios from '~/plugins/axios.config'
 import articleItem from '~/components/articleListItem'
 export default {
   components: {
     articleItem
+  },
+  async asyncData (context) {
+    let { data } = await axios.get('/articles')
+    console.log(data)
+    return {articleList: data.items}
   },
   data () {
     return {

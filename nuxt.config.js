@@ -10,7 +10,8 @@ module.exports = {
       { hid: 'description', name: 'description', content: 'new blog' }
     ],
     link: [
-      { rel: 'stylesheet', href: '//at.alicdn.com/t/font_783325_c5c0qkxfmzg.css'},
+      // { rel: 'stylesheet', href: '//at.alicdn.com/t/font_783325_c5c0qkxfmzg.css'},
+      { rel: 'stylesheet', href: '//netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css'},
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
     ]
   },
@@ -44,7 +45,8 @@ module.exports = {
   css: [
     // 全部引用的时候需要用到
     'element-ui/lib/theme-chalk/index.css',
-    '~styles/common.scss'
+    '~styles/common.scss',
+    'highlight.js/styles/ocean.css'
   ],
   /*
   ** Build configuration
