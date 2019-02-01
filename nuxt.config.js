@@ -46,6 +46,7 @@ module.exports = {
     // 全部引用的时候需要用到
     'element-ui/lib/theme-chalk/index.css',
     '~styles/common.scss',
+    '~styles/content.scss',
     'highlight.js/styles/ocean.css'
   ],
   /*

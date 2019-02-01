@@ -17,6 +17,15 @@ marked.setOptions({
 
 const renderer = new marked.Renderer()
 
+// 表格解析器
+const tableParse = function (header, body) {
+  console.log(header, body)
+  let table = `<table border=1 cellspacing=0 cellpadding=0>
+    <thead>${header}</thead>
+    <tbody>${body}</tbody>
+  </table>`
+  return table
+}
 // 代码解析器（行号处理）
 const codeParse = function (code, lang, escaped) {
   if (this.options.highlight) {
@@ -38,6 +47,7 @@ const codeParse = function (code, lang, escaped) {
   }
 }
 renderer.code = codeParse
+renderer.table = tableParse
 
 export default (content) => {
   return marked(content, { renderer })
