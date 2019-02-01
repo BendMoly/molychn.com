@@ -23,7 +23,7 @@ html,body{
 }
 html{
   font-family: 'monaco', 'Source Sans Pro', -apple-system, 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
-  font-size: 14px;
+  font-size: 16px;
 }
 body{
   background: url(../assets/math0.png) fixed top left;
@@ -41,8 +41,12 @@ body::after{
   background: rgba($color: #ebebeb, $alpha: 0.9);
   z-index: -1;
 }
+.container{
+  padding-top: 60px;
+}
 .page-container{
   width: 90%;
+  min-height: calc(100vh - 80px);
   margin: 0 auto;
   margin-top: 20px;
   @media screen and (max-width: 1200px) {
@@ -50,29 +54,42 @@ body::after{
     padding: 0 40px;
   }
 }
-.page-left{
-  float: left;
-  width: 19%;
-  overflow: hidden;
-}
-.page-right{
-  float: right;
-  width: 19%;
-}
-.page-middle{
-  width: 50%;
-  margin-left: 25%;
-  height: 100px;
-  // background: #cccccc;
-}
 .nav-btn{
   position: fixed;
-  bottom: 10%;
-  right: 20%;
+  top: 10%;
+  left: 5%;
   width: 50px;
-  // height: 100px;
-  // background: #cccccc;
 }
+.page-list{
+  position: relative;
+  width: 850px;
+  min-height: calc(100vh - 180px);
+  margin-left: 80px;
+  padding-bottom: 100px;
+}
+.article-pagigation{
+  text-align: center;
+  position: absolute;
+  bottom: 50px;
+  left: 0;
+  width: 100%;
+}
+// .page-left{
+//   float: left;
+//   width: 19%;
+//   overflow: hidden;
+// }
+// .page-right{
+//   float: right;
+//   width: 19%;
+// }
+// .page-middle{
+//   width: 50%;
+//   margin-left: 25%;
+//   height: 100px;
+//   // background: #cccccc;
+// }
+
 .nav-btn-list{
   width: 50px;
   height: 50px;

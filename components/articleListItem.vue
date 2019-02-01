@@ -5,15 +5,17 @@
       <span class="item-publish_postbylabel">Post at</span>
       <!-- <span class="item-publish_name">{{ name }}</span> -->
       <span class="item-publish_date">{{ date | timeFormat }}</span>
+      <span class="item-publish_postbylabel">in</span>
+      <span class="item-publish_column"><i class="fa fa-columns"></i><span>{{ columnName }}</span></span>
       <!-- <span class="item-publish_read"><i class="fa fa-eye"></i>168</span> -->
-      <div>
+      <!-- <div>
         <span class="item-publish_column"><i class="fa fa-columns"></i><span>{{ columnName }}</span></span>
         <span class="item-publish_tags"><i class="fa fa-tags"></i><span class="item-publish_tags-items" v-for="item in tags" :key="item">{{ item }}</span></span>
-      </div>
+      </div> -->
     </div>
     <div class="item-ctn">
       <!-- <div class="item-cover">[图片]</div> -->
-      <div class="item-cover"><img src="../assets/banner_default.png" alt=""></div>
+      <!-- <div class="item-cover"><img src="../assets/banner_default.png" alt=""></div> -->
       <div class="item-ctn_abstract">{{ abs }}</div>
     </div>
     <div class="item-more"><nuxt-link :to="'/article/'+id"><span>See more ></span></nuxt-link></div>
@@ -53,7 +55,9 @@ export default {
   },
   filters: {
     timeFormat (val) {
+      console.log(val)
       let date = new Date(val)
+      console.log(date)
       return `${date.getFullYear()}/${date.getMonth() + 1}/${date.getDate()} ${date.getHours()}:${date.getMinutes()}`
     }
   }
@@ -62,7 +66,7 @@ export default {
 
 <style lang="scss" scoped>
 .item-container{
-  padding: 10px 20px;
+  padding: 20px 20px 10px 20px;
   background: #ffffff;
   border-radius: 4px;
   margin-bottom: 10px;
@@ -81,6 +85,7 @@ export default {
   margin-right: 5px;
 }
 .item-publish_date{
+  margin-right: 5px;
   color: #333333;
   // margin-left: 10px;
 }
@@ -129,6 +134,7 @@ export default {
   }
 }
 .item-ctn{
+  margin-top: 15px;
   margin-bottom: 10px;
 }
 .item-cover{

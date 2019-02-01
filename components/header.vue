@@ -6,6 +6,10 @@
 
 <style lang="scss" scoped>
 .header-container{
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 999;
   width: 100%;
   height: 60px;
   background: rgba(255, 255, 255, .8);

@@ -1,11 +1,13 @@
 import Vue from 'vue'
 
 import {
-  Button
+  Button,
+  Pagination
 } from 'element-ui'
 
 const Components = [
-  Button
+  Button,
+  Pagination
 ]
 
 Components.map(key => Vue.use(key))

@@ -11,6 +11,14 @@
     :img="item.img"
     :abs="item.abstract"
     ></article-item>
+    <el-pagination
+    class="article-pagigation"
+    background
+    layout="prev, pager, next"
+    :total="total"
+    @current-change="currentPageChange"
+    >
+    </el-pagination>
   </section>
 </template>
 
@@ -23,23 +31,34 @@ export default {
   },
   async asyncData (context) {
     let { data } = await axios.get('/articles')
-    console.log(data)
-    return {articleList: data.items}
+    return {
+      total: data.count,
+      current: data.current,
+      articleList: data.items
+    }
   },
   data () {
     return {
-      a: 1,
       articleList: [
         {
           id: '201808082000',
           title: '如果我能看得见',
           name: 'moly',
-          date: Date.now(),
+          date: String(new Date().valueOf()),
           img: '',
-          abs: '这是一段摘要'
+          abstract: '这是一段摘要'
         }
       ]
     }
-  }
+  },
+  methods: {
+    currentPageChange (val) {
+      console.log(val)
+      this.current = val
+      axios.get('/articles', {current: this.current}).then(res => {
+        this.articleList = res.data.items
+      })
+    }
+  },
 }
 </script>
