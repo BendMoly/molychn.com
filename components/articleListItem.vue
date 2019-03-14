@@ -2,11 +2,11 @@
   <section class="item-container">
     <div class="item-title">{{ title }}</div>
     <div class="item-publish">
-      <span class="item-publish_postbylabel">Post at</span>
+      <span class="item-publish_postbylabel"><i class="fa fa-calendar"></i></span>
       <!-- <span class="item-publish_name">{{ name }}</span> -->
       <span class="item-publish_date">{{ date | timeFormat }}</span>
       <span class="item-publish_postbylabel">in</span>
-      <span class="item-publish_column"><i class="fa fa-columns"></i><span>{{ columnName }}</span></span>
+      <span class="item-publish_column"><i class="fa fa-folder-open-o"></i><span>{{ columnName }}</span></span>
       <!-- <span class="item-publish_read"><i class="fa fa-eye"></i>168</span> -->
       <!-- <div>
         <span class="item-publish_column"><i class="fa fa-columns"></i><span>{{ columnName }}</span></span>
@@ -18,7 +18,7 @@
       <!-- <div class="item-cover"><img src="../assets/banner_default.png" alt=""></div> -->
       <div class="item-ctn_abstract">{{ abs }}</div>
     </div>
-    <div class="item-more"><nuxt-link :to="'/article/'+id"><span>See more ></span></nuxt-link></div>
+    <div class="item-more"><nuxt-link :to="'/article/'+id"><span>See more></span></nuxt-link></div>
   </section>
 </template>
 
@@ -58,7 +58,7 @@ export default {
       console.log(val)
       let date = new Date(val)
       console.log(date)
-      return `${date.getFullYear()}/${date.getMonth() + 1}/${date.getDate()} ${date.getHours()}:${date.getMinutes()}`
+      return `${date.getFullYear()}/${date.getMonth() + 1}/${date.getDate()}`
     }
   }
 }
@@ -79,6 +79,7 @@ export default {
 }
 .item-publish{
   margin-bottom: 5px;
+  font-size: 14px;
 }
 .item-publish_postbylabel{
   color: #999999;
@@ -104,7 +105,7 @@ export default {
   span{
     margin-right: 10px;
     line-height: 1;
-    text-decoration: underline #999999;
+    // text-decoration: underline #999999;
     transition: .3s;
     cursor: pointer;
   }

@@ -2,14 +2,14 @@
   <section class="ctn-container">
     <div class="ctn-title">{{ data.title }}</div>
     <div class="ctn-info">
-      <span class="ctn_postbylabel">post by</span>
-      <span class="ctn_name">molyCHN</span>
+      <!-- <span class="ctn_postbylabel"><i class="fa fa-pencil-square-o"></i></span>
+      <span class="ctn_name">molyCHN</span> -->
+      <span><i class="fa fa-calendar"></i></span>
       <span class="ctn_date">{{ data.date | timeFormat }}</span>
-      <span class="ctn_read"><i class="fa fa-eye"></i>168</span>
-      <div>
-        <span class="ctn_column"><i class="fa fa-columns"></i><span>{{ data.columnName }}</span></span>
+      <span class="ctn_column"><i class="fa fa-folder-open-o"></i><span>{{ data.columnName }}</span></span>
+      <!-- <div>
         <span class="ctn_tags"><i class="fa fa-tags"></i><span class="ctn_tags-items" v-for="item in data.tags" :key="item">{{ item }}</span></span>
-      </div>
+      </div> -->
     </div>
     <div class="ctn-magazine"><img src="../../../assets/banner_default.png" alt=""></div>
     <div class="ctn-content">
@@ -32,7 +32,7 @@ export default {
   filters: {
     timeFormat (val) {
       let date = new Date(val)
-      return `${date.getFullYear()}/${date.getMonth() + 1}/${date.getDate()} ${date.getHours()}:${date.getMinutes()}`
+      return `${date.getFullYear()}/${date.getMonth() + 1}/${date.getDate()}`
     },
     markContent (val) {
       return marked(val)
@@ -45,16 +45,20 @@ export default {
 .ctn-container{
   padding: 20px;
   background: #ffffff;
+  // background: url(../../../assets/article_bg01.jpeg);
   border-radius: 4px;
 }
 .ctn-title{
-  font-size: 18px;
+  text-align: center;
+  font-size: 25px;
   padding-bottom: 10px;
   border-bottom: 1px solid #ebebeb;
   margin-bottom: 5px;
 }
 .ctn-info{
-  margin-bottom: 15px;
+  margin-bottom: 20px;
+  text-align: center;
+  font-size: 14px;
 }
 .ctn_postbylabel{
   color: #999999;
@@ -62,7 +66,8 @@ export default {
 }
 .ctn_date{
   color: #999999;
-  margin-left: 10px;
+  margin-left: 5px;
+  margin-right: 10px;
 }
 .ctn_read{
   color: #999999;
@@ -78,7 +83,7 @@ export default {
   }
   span{
     margin-right: 10px;
-    text-decoration: underline #999999;
+    // text-decoration: underline #999999;
     transition: .2s;
     cursor: pointer;
   }
