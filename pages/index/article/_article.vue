@@ -43,6 +43,8 @@ export default {
 
 <style lang="scss" scoped>
 .ctn-container{
+  width: 60%;
+  margin: 0 auto;
   padding: 20px;
   background: #ffffff;
   // background: url(../../../assets/article_bg01.jpeg);

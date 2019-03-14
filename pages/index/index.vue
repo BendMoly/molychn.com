@@ -1,5 +1,5 @@
 <template>
-  <section>
+  <section class="article-list">
     <article-item v-for="item in articleList"
     :key="item._id"
     :id="item._id"

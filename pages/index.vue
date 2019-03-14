@@ -9,7 +9,7 @@
           </div>
         </nuxt-link>
       </div>
-      <div class="page-list">
+      <div class="page-main">
         <nuxt-child></nuxt-child>
       </div>
     </div>
